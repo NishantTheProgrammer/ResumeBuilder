@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
+.sidebar {
+    height: 100vh;
+    width: 30em;
+    background-color: var(--sidebar-background-color);
+    transition: width .5s ease;
+    overflow-y: scroll;
+    flex-shrink: 0;
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.close {
+    width: 9em;
+}
+.sidebar header {
+    display: flex;
+    align-items: center;
+    padding: 2em;
+    justify-content: flex-end;
+}
+
+
+
+.sidebar header h1 {
+    font-weight: bolder;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    white-space: nowrap;
+    margin-right: auto;
+    color: var(--pink);
+}
+
+.sidebar header h1.open {
+    width: 100%;
+}
+
+
+
+.hamburger {
+    background-color: var(--pink);
+    font-size: 2em;
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s;
+    flex-shrink: 0;
+}
+.hamburger:hover {
+    box-shadow: 0 0 .5em black;
+}

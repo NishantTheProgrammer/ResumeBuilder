@@ -1,0 +1,17 @@
+.workspace {
+    flex-grow: 1;
+    background-color: var(--workspace-background-color);
+    color: white;
+    padding: 2em;
+    position: relative;
+}
+
+.workspace.noElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workspace.noElement > h1 {
+    font-size: 2em;
+}

@@ -1,0 +1,29 @@
+.item {
+    background-color: gray;
+    margin: 1em 2em;
+    font-size: 2em;
+    border-radius: .5em;
+    text-align: center;
+    padding: .7em 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: background-color 300ms ease;
+}
+.item:hover {
+    background-color: rgb(165, 165, 165);
+}
+
+.item.close {
+    margin: 2em .5em;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.item img {
+    max-width: 2.8em;
+}
+.item.close img {
+    width: 60%;
+    margin: .3em;
+}
