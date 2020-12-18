@@ -1,0 +1,59 @@
+
+.progressIndicator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.progressIndicator::before {
+    content: '';
+    height: .2em;
+    width: 100%;
+    background-image: var(--progress-line);
+    position: absolute;
+    top: 40%;
+    z-index: -1;
+    transition: all 2s;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item i {
+    font-size: 2.5em;
+    height: 2em;
+    width: 2em;
+    padding: .5em;
+    background-color: var(--workspace-background-color);
+    display: flex;
+    justify-content: center;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.item p {
+    font-size: 1.2em;
+    margin-top: .2em;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+.item i.active {
+    background-color: #e0940a;
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+.item i.done {
+    background-color: #0b651a;
+}

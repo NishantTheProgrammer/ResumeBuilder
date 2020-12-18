@@ -4,7 +4,7 @@ import Items from './Items/Items';
 import classes from './SideBar.module.css';
 
 const SideBar = props => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return (
         <div 

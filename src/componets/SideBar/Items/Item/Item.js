@@ -7,7 +7,7 @@ const Item = props => {
             [classes.item, !props.hamburgerOpen ? classes.close : '']
             .join(' ')} >
             {props.hamburgerOpen ? <p>{props.name}</p> : null}
-            <img src={`assets/${props.name}.svg`}/>
+            <img src={`assets/${props.name}.svg`} alt='' />
         </div>
     )
 }

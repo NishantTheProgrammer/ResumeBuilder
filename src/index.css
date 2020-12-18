@@ -23,4 +23,5 @@ body {
     --workspace-background-color: #1b1a1c;
     --sidebar-background-color: #2b2530;
     --pink: pink;
+    --progress-line: linear-gradient(to right, #0b651a 0%, white 0%);
 }
