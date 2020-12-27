@@ -17,6 +17,15 @@ class FormComponent extends Component {
         currentFormNumber: 0
     }
 
+    progressHandler = data => {
+        const dataType = Object.keys(this.formClasses)[this.state.currentFormNumber]
+        const state = {...this.state};
+        state[dataType] = data;
+        this.setState(state);
+        
+        this.setState(prev => ({currentFormNumber: prev.currentFormNumber + 1}));
+        console.log('hi')
+    };
 
 
     componentDidUpdate() {
@@ -29,6 +38,12 @@ class FormComponent extends Component {
     render() {
 
         let isCompleted = Object.keys(this.formClasses).length <= this.state.currentFormNumber;
+
+        if(isCompleted) {
+            const state = {...this.state};
+            delete state.currentFormNumber;
+            this.props.completed(state);
+        } 
         return (
             <div className={[classes.form, isCompleted && classes.formCompleted].join(' ')}>
                 {
@@ -37,8 +52,9 @@ class FormComponent extends Component {
                     :   <FormSlide 
                             items={this.formClasses}
                             currentFormNumber={this.state.currentFormNumber}
+                            onProgress={this.progressHandler}
                             updateFormNumber={this.updateFormNumberHandler}
-                            />
+                        />
                 }
             </div>
         )

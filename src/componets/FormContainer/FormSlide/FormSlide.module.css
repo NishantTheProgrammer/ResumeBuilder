@@ -1,22 +1,154 @@
 .form {
     flex-grow: 1;
-}
-
-.formItem {
-    height: 3em;
-    margin-top: 1em;
-    font-size: 2em;
-    padding: 0 1em;
+    padding: 4em;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
-
-.formItem input {
-    padding: .7em;
+.formItem {
+    font-size: 2em;
+    max-width: 25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 1em;
+    width: 100%;
+    
+    outline: none;
+    border: .15em solid aqua;
+    border-radius: .5em;
 }
+
+.formItem label {
+    position: absolute;
+    color: white;
+    font-size: 1.2em;
+    left: 1em;
+    transition: all .5s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.formItem label span {
+    margin-left: .5em;
+}
+
+.formItem input, .formItem textarea {
+    padding: .7em 1em;
+    font-size: 1.2em;
+    color: white;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+input[type="date"] {
+    border-width: .15em;
+    text-align: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1);}
+
+input[type='radio'] {
+    height: 30px;
+    width: 30px;
+    margin: .2em;
+    background-color: blueviolet;
+}
+
+
+
+
+.formItem input:focus + label,
+.formItem input:valid + label,
+.formItem textarea:focus + label,
+.formItem textarea:valid + label  {
+    top: 0;
+    font-size: .8em;    
+    padding: .3em .6em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #252525;
+    border: .15em solid aqua;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.formItem input:focus + label span,
+.formItem input:valid + label span,
+.formItem textarea:focus + label span,
+.formItem textarea:valid + label span  {
+    display: none;
+}
+button[type='submit'], .submitButton {
+    margin-top: .5em;
+    font-size: 3em;
+    color: white;
+    background-color: #058f1c;
+    border: none;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 1.25em;
+    outline: none;
+    cursor: pointer;
+}
+
 
 .formSlide h1 {
     text-transform: capitalize;
+}
+
+.skills {
+    justify-content: flex-start; 
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.skills span {
+    padding: .5em 1em;
+    margin: .5em;
+    border-radius: .3em;
+    background-image: linear-gradient(45deg, rgb(29 98 189 / 50%), rgb(58 133 41 / 50%));
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    animation: opacity 500ms ease forwards;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.skills span::after {
+    position: absolute;
+    content: '✕';
+    background-image: linear-gradient(45deg, rgb(189 29 44), rgb(133 83 41));
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .4s ease-in-out;
+}
+
+.skills span:hover:after {
+    opacity: 1;
 }

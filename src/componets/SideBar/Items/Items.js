@@ -11,7 +11,7 @@ const Items = props => {
 
     return (
         <div className={classes.items} >
-            { itemsData.map(data => <Item {...data} hamburgerOpen={props.hamburgerOpen} />) }
+            { itemsData.map(data => <Item {...data} key={data.name} hamburgerOpen={props.hamburgerOpen} />) }
         </div>
     )
 }

@@ -1,5 +1,5 @@
 .form {
-    background-color: gray;
+    background-color: #252525;
     width: 80%;
     height: 80%;
     border-radius: 1em;
@@ -10,6 +10,10 @@
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     transition: all 1s;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 .form h1 {
     font-size: 3em;

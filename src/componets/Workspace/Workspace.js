@@ -6,14 +6,18 @@ class Workspace extends Component {
 
     state = {
         isInfoFilled: false
+
     }
+
 
     render() {
         return (
             <div className={[classes.workspace, classes.noElement].join(' ')}>
                 { this.state.isInfoFilled 
                     ?    <h1>Drag and Drop elements or choose a template</h1>
-                    :   <FormContainer />
+                    :   <FormContainer completed={userInfo => setTimeout(() => {
+                            this.setState({userInfo, isInfoFilled: true})
+                        }, 5000)} />        // after animation done
                 }
             </div>
         );
