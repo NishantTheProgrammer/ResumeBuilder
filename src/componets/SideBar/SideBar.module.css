@@ -6,6 +6,7 @@
     transition: width .5s ease;
     overflow-y: scroll;
     flex-shrink: 0;
+    z-index: 999;
 }
 .sidebar::-webkit-scrollbar {
     display: none;

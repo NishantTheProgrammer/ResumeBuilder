@@ -1,0 +1,29 @@
+.container {
+    background-color: yellow;
+}
+
+.container div {
+    margin: 1em;
+}
+.infoType {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.profilePic {
+    border-radius: 20rem;
+    display: block;
+    height: 10rem;
+    width: 10rem;
+    margin: 1.5rem;
+}
+p {
+    font-size: 1.5rem;
+}
+
+ul li {
+    border: .1rem solid black;
+    padding: .5rem 1rem;
+    margin: .5rem ;
+    display: inline-block;
+}

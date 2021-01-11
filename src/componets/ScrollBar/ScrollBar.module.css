@@ -1,0 +1,14 @@
+.scrollBar{
+    position: fixed;
+    right: 2rem;
+    top: 0;
+    padding: 1rem 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: white;
+    z-index: 999;
+}
+.scrollBar input {
+    cursor: pointer;
+    outline: none;
+}
