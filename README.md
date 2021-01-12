@@ -1,3 +1,3 @@
-# ResumeBuilder with REACT and Django
+# ResumeBuilder with REACT
 
 Live on [resumebuilder.nishanttheprogrammer.com](https://resumebuilder.nishanttheprogrammer.com)

@@ -5,9 +5,11 @@ const Education = ({classes,  ...props}) => {
     const [degree, setDegree] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
+
     
     return (
         <form className={classes.form} onSubmit={props.onProgress}>
+            
             <div className={classes.formItem}>
                 <input 
                     type="text" 

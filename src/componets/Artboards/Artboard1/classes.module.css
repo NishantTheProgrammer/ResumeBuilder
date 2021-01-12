@@ -2,7 +2,9 @@
     background-color: yellow;
 }
 
-.container div {
+.container > div {
+    border: 2px solid;
+    padding: 20px; 
     margin: 1em;
 }
 .infoType {
@@ -21,7 +23,7 @@ p {
     font-size: 1.5rem;
 }
 
-ul li {
+.skills ul li {
     border: .1rem solid black;
     padding: .5rem 1rem;
     margin: .5rem ;

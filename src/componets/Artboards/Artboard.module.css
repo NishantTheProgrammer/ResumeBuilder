@@ -8,7 +8,3 @@
     transform-origin: top;
     overflow: scroll;
 }
-.container > div {
-    border: 2px solid;
-    padding: 20px; 
-}

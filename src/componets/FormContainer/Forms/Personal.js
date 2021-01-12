@@ -6,18 +6,38 @@ const Personal = ({classes,  ...props}) => {
     const [gender, setGender] = useState('male');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [image, setImage] = useState(null);    
 
 
     return (
         <form className={classes.form} onSubmit={e => e.preventDefault()}>
-            <div className={classes.formItem}>
-                <input 
-                    type="text" 
-                    required
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                />
-                <label><i className="fas fa-user"></i><span>Name</span></label>
+            <div style={{display: 'flex', maxWidth: '50em', overflow: 'hidden'}}>
+                <div 
+                    className={classes.formItem} 
+                    style={{
+                        flexBasis: '10rem', 
+                        marginRight: '2rem', 
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${image})`}}>
+                    <input 
+                        type="file" 
+                        accept="image/x-png,image/gif,image/jpeg"
+                        required
+                        style={{opacity: 0}}
+                        onChange={e => setImage(URL.createObjectURL(e.target.files[0]))}
+                    />
+                    <label><i className="fas fa-image"></i><span></span></label>
+                </div>
+                <div className={classes.formItem} style={{flexGrow: 1}}>
+                    <input 
+                        type="text" 
+                        required
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
+                    <label><i className="fas fa-user"></i><span>Name</span></label>
+                </div>
+
             </div>
             <div className={classes.formItem}>
                 <input 
@@ -70,6 +90,7 @@ const Personal = ({classes,  ...props}) => {
                 <label><i className="fas fa-mobile-alt"></i><span>Phone Number</span></label>
             </div>
             <button type="submit" onClick={() => props.onProgress({
+                image,
                 name,
                 dob,
                 gender,

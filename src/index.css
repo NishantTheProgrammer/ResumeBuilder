@@ -25,3 +25,20 @@ body {
     --pink: pink;
     --progress-line: linear-gradient(to right, #0b651a 0%, white 0%);
 }
+@page {
+    size: A4;
+    margin: 0;
+  }
+@media print {
+    * {
+      visibility: hidden !important;
+    }
+    #section-to-print, #section-to-print * {
+      visibility: visible !important;
+    }
+    #section-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }

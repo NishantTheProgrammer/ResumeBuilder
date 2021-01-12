@@ -22,9 +22,7 @@ class FormComponent extends Component {
         const state = {...this.state};
         state[dataType] = data;
         this.setState(state);
-        
         this.setState(prev => ({currentFormNumber: prev.currentFormNumber + 1}));
-        console.log('hi')
     };
 
 
@@ -38,7 +36,6 @@ class FormComponent extends Component {
     render() {
 
         let isCompleted = Object.keys(this.formClasses).length <= this.state.currentFormNumber;
-
         if(isCompleted) {
             const state = {...this.state};
             delete state.currentFormNumber;
